@@ -1,11 +1,11 @@
 namespace Testovoe;
 
-public class Circle : IFigure
+public class CircleFigure : IFigure
 {
     private float _radius;
     public float Radius => _radius;
     
-    public Circle(float radius)
+    public CircleFigure(float radius)
     {
         if(radius <= 0)
             throw new ArgumentException("Radius should be bigger than 0", nameof(radius));
@@ -14,6 +14,6 @@ public class Circle : IFigure
     
     public float Square()
     {
-        return MathF.PI * MathF.Pow(_radius, 2);
+        return MathF.Round(MathF.PI * MathF.Pow(_radius, 2), 5);
     }
 }
